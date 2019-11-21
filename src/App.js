@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import Block from './block';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      array: [
+        ['block'], ['block1'], ['block2'], ['block3'], ['block4']
+      ],
+      index: 0
+    }
+  }
+
+  componentDidMount = () => {
+    setInterval(() => {
+      this.setState({
+        index: this.state.index == this.state.array.length - 1 ? 0 : this.state.index + 1
+      })
+    }, 4000)
+  }
+
+
+  render () {
+    return (
+      <div className="App">
+        <Block class={this.state.array[this.state.index][0]} />
+      </div>
+    )
+  }
 }
 
 export default App;
