@@ -7,17 +7,22 @@
   width: 200px;
   height: 200px;
   margin: 25px;
-  background-color: red;
-  -webkit-animation: fadeinout 6s linear;
-  animation: fadeinout 6s linear;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  -webkit-animation: fadeinout 6s linear forwards;
+  animation: fadeinout 6s linear forwards;
   opacity: 0;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
 }
 
 @-webkit-keyframes fadeinout {
-  10%, 20%, 30%, 40%, 50% { opacity: 1; }
+  0%, 100% { opacity: 0; }
+  10%, 90% { opacity: 1; }
 }
 
 @keyframes fadeinout {
-  10%, 20%, 30%, 40%, 50% { opacity: 1; }
+  0%, 100% { opacity: 0; }
+  10%, 90% { opacity: 1; }
 }
 

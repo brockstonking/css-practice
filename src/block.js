@@ -7,7 +7,7 @@ class Block extends Component {
 
     render(){
         return (
-            <div className={ this.props.class }></div>
+            <div className='block' >{ this.props.class }</div>
         )
     }
 }
